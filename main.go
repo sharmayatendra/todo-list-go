@@ -8,6 +8,13 @@ func main() {
 
 	// alternative declaration syntax for variables
 	secondVariable := "second variable"
-	fmt.Println(firstVariable);
-	fmt.Println((secondVariable))
+
+	// slices syntax:
+	combinedVariables := []string {firstVariable, secondVariable }
+	
+	// so diff b/w array & slice is array is fixed size while slice is dynamically allocated
+	// example:
+	// listArray := [2]string {firstVariable, secondVariable, secondVariable}
+	// above code will throw an error as it is strict for 2 elements
+	fmt.Println(combinedVariables)
 }
