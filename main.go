@@ -20,8 +20,25 @@ func main() {
 	// above code will throw an error as it is strict for 2 elements
 	// fmt.Println(combinedVariables)
 
+	printLoopUsingFunction(combinedVariables)
+	addNewTaskToList(combinedVariables, "New task")
+
 	// loops syntax:
-	for index, task := range combinedVariables {
+	// for index, task := range combinedVariables {
+	// 	fmt.Printf("%d. %s\n", index + 1, task)
+	// }
+}
+
+// function
+func printLoopUsingFunction(params []string) {
+	for index, task := range params {
 		fmt.Printf("%d. %s\n", index + 1, task)
 	}
+}
+
+// adding new task to list using append function
+func addNewTaskToList(currentTaskList []string, newTask string) {
+	updatedTaskList := append(currentTaskList, newTask)
+
+	printLoopUsingFunction(updatedTaskList)
 }
