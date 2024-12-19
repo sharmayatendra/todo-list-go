@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
 	// using variables
@@ -22,11 +25,26 @@ func main() {
 
 	printLoopUsingFunction(combinedVariables)
 	combinedVariables = addNewTaskToList(combinedVariables, "New task")
+	combinedVariables = addNewTaskToList(combinedVariables, "first go code")
+
+	fmt.Println()
+	fmt.Println("After adding new task")
+	fmt.Println()
 
 	// loops syntax:
 	// for index, task := range combinedVariables {
 	// 	fmt.Printf("%d. %s\n", index + 1, task)
 	// }
+	printLoopUsingFunction(combinedVariables)
+
+	http.HandleFunc("/hello", helloUserHandler);
+
+	http.ListenAndServe(":8080", nil)
+}
+
+func helloUserHandler(w http.ResponseWriter, r *http.Request) {
+	greetUser := "Hello, User!"
+	fmt.Fprintln(w, greetUser)
 }
 
 // function
