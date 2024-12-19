@@ -21,7 +21,7 @@ func main() {
 	// fmt.Println(combinedVariables)
 
 	printLoopUsingFunction(combinedVariables)
-	addNewTaskToList(combinedVariables, "New task")
+	combinedVariables = addNewTaskToList(combinedVariables, "New task")
 
 	// loops syntax:
 	// for index, task := range combinedVariables {
@@ -37,8 +37,9 @@ func printLoopUsingFunction(params []string) {
 }
 
 // adding new task to list using append function
-func addNewTaskToList(currentTaskList []string, newTask string) {
+// what func takes parameters & return value
+func addNewTaskToList(currentTaskList []string, newTask string) []string {
 	updatedTaskList := append(currentTaskList, newTask)
 
-	printLoopUsingFunction(updatedTaskList)
+	return updatedTaskList
 }
